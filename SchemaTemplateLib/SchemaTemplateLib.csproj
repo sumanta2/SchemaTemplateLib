@@ -1,0 +1,22 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+	<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+	<PackageId>FirstTry.SchemaTemplateLib</PackageId>
+	<Version>0.0.0.1-beta</Version>
+	<Authors>Sumanta-Biplab</Authors>
+	<Description>Extract data from sql and generate Excel file from there</Description>
+  </PropertyGroup>
+
+
+	<ItemGroup>
+		<PackageReference Include="ClosedXML" Version="0.105.0" />
+		<PackageReference Include="Microsoft.Data.SqlClient" Version="6.1.3" />
+		<PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="10.0.1" />
+		<PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="10.0.0" />
+	</ItemGroup>
+
+</Project>
