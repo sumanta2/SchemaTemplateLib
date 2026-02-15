@@ -19,5 +19,10 @@ namespace SchemaTemplateLib
 		{
 			return _dataProcessing.GetProcedureParams(procedureName);
 		}
+
+		public List<string> SearchProcedures(string query)
+		{
+			return _dataProcessing.SearchProcedures(query);
+		}
 	}
 }

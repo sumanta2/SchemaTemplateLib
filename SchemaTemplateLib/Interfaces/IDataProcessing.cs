@@ -8,5 +8,6 @@ namespace SchemaTemplateLib.Interfaces
 	{
 		(MemoryStream Stream, string FileName) GenerateExcelTemplate(string procedureName, Dictionary<string, string> parameterValues);
 		List<ProcedureParam> GetProcedureParams(string procedureName);
+		List<string> SearchProcedures(string query);
 	}
 }

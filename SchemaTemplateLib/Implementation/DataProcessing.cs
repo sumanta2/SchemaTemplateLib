@@ -347,4 +347,31 @@ public class DataProcessing : IDataProcessing
 		return (stream, fullFileName);
 	}
 
+	public List<string> SearchProcedures(string query)
+	{
+		var procedures = new List<string>();
+		string sql = @"
+            SELECT TOP 7 
+                s.name + '.' + p.name AS ProcedureName
+            FROM sys.procedures p
+            INNER JOIN sys.schemas s ON p.schema_id = s.schema_id
+            WHERE (s.name + '.' + p.name) LIKE @query
+            ORDER BY p.name";
+
+		using (var con = new SqlConnection(_connectionString))
+		using (var cmd = new SqlCommand(sql, con))
+		{
+			cmd.Parameters.AddWithValue("@query", "%" + query + "%");
+			con.Open();
+			using (var reader = cmd.ExecuteReader())
+			{
+				while (reader.Read())
+				{
+					procedures.Add(reader["ProcedureName"].ToString());
+				}
+			}
+		}
+		return procedures;
+	}
+
 }
