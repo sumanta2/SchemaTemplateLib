@@ -6,7 +6,7 @@
     <Nullable>enable</Nullable>
 	<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
 	<PackageId>FirstTry.SchemaTemplateLib</PackageId>
-	<Version>0.0.0.2-beta</Version>
+	<Version>0.0.0.31-beta</Version>
 	<Authors>Sumanta-Biplab</Authors>
 	<Description>Extract data from sql and generate Excel file from there</Description>
   </PropertyGroup>

@@ -24,13 +24,11 @@ First, ensure your library project (.csproj) has the necessary metadata. Open yo
 
 ### 2. Build the NuGet Package
 
-Navigate to your library project folder in terminal/command prompt and run:
+Clean solution and Build Solution
 
-```bash
-dotnet pack -c Release
-```
+- Output package will be in: bin\Debug\YourCompany.YourLibrary.1.0.0.nupkg
 
-This creates a `.nupkg` file in `bin/Release/` directory.
+This creates a `.nupkg` file in `bin/Release/` or `bin\Debug` directory.
 
 ### 3. Set Up Local NuGet Source
 
@@ -38,7 +36,7 @@ Create a folder to store your local packages, for example: `C:\LocalNuGetPackage
 
 Copy your `.nupkg` file to this folder, then add it as a NuGet source:
 
-Add it via Visual Studio:
+Add it via Visual Studio(One time to setUp Nuget Package location in my local system):
 
 - Tools → Options → NuGet Package Manager → Package Sources
 - Click + → Add your folder path
@@ -53,12 +51,6 @@ In your Web API project directory, run:
 dotnet add package MyCompany.MyLibrary --version 1.0.0
 ```
 
-Or use Package Manager Console in Visual Studio:
-
-```powershell
-Install-Package MyCompany.MyLibrary -Version 1.0.0
-```
-
 ### 2. Use the Library
 
 Now you can use your library in your Web API:
@@ -68,6 +60,6 @@ Now you can use your library in your Web API:
 When you make changes to your library:
 
 1. Update the `<Version>` in your `.csproj` (e.g., to 1.0.1)
-2. Run `dotnet pack -c Release` again
-3. Copy the new `.nupkg` to your local folder
+2. Clean and Build solution again
+3. Copy the new `.nupkg` from `bin/Release/` to to your local folder
 4. Update the package in your Web API: `dotnet add package MyCompany.MyLibrary --version 1.0.1`
